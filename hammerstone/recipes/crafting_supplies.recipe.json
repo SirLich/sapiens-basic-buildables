@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Sapiens-OSS/hammerstone-framework/feature/data-driven-api/schemas/recipe.schema.json",
+	"hammerstone:recipe_definition": {
+		"description": {
+			"identifier": "wood_crafting_supplies",
+			"name": "Supplies from Branch",
+			"plural": "Wood Crafting Supplies",
+			"summary": "Wooden Supplies for crafting buildables."
+		},
+		"components": {
+			"hs_recipe": {
+				"preview_object": "wood_crafting_supplies",
+				"classification": "craft"
+			},
+			"hs_requirements": {
+				"skills": [
+					"woodWorking"
+				],
+				"resources": [
+					{
+						"resource": "branch",
+						"action": {
+							"action_type": "patDown",
+							"duration": 0.5,
+							"duration_without_skill": 0.4
+						}
+					}
+				]
+			},
+			"hs_output": {
+				"output_by_object": [
+					{
+						"input": "birchBranch",
+						"output": [
+							"wood_crafting_supplies",
+							"wood_crafting_supplies",
+							"wood_crafting_supplies"
+						]
+					}
+				]
+			},
+			"hs_build_sequence": {
+				"action_sequence": "scrapeWood"
+			}
+		}
+	}
+}

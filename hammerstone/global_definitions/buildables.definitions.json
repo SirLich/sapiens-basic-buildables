@@ -1,0 +1,72 @@
+{
+    "hammerstone:global_definitions": {
+        "hs_model_remaps": [
+            {
+                "model": "orange_woodSeat",
+                "base_model": "woodSeat",
+                "material_remaps": [
+                    {
+                        "from": "wood",
+                        "to": "orangeWood"
+                    },
+                    {
+                        "from": "bark",
+                        "to": "orangeBark"
+                    }
+                ]
+            },
+            {
+                "model": "orange_chairLeg",
+                "base_model": "chairLeg",
+                "material_remaps": [
+                    {
+                        "from": "wood",
+                        "to": "orangeWood"
+                    },
+                    {
+                        "from": "bark",
+                        "to": "orangeBark"
+                    }
+                ]
+            },
+            {
+                "model": "orange_chairBack",
+                "base_model": "chairBack",
+                "material_remaps": [
+                    {
+                        "from": "wood",
+                        "to": "orangeWood"
+                    },
+                    {
+                        "from": "bark",
+                        "to": "orangeBark"
+                    }
+                ]
+            },
+            {
+                "model": "orangeWoodCraftingSupplies",
+                "base_model": "woodCraftingSupplies",
+                "material_remaps": [
+                    {
+                        "from": "wood",
+                        "to": "orangeWood"
+                    },
+                    {
+                        "from": "whiteTrunk",
+                        "to": "orangeBark"
+                    }
+                ]
+            },
+            {
+                "model": "pine_woodStock",
+                "base_model": "woodCraftingSupplies",
+                "material_remaps": [
+                    {
+                        "from": "whiteTrunk",
+                        "to": "trunk"
+                    }
+                ]
+            }
+        ]
+    }
+}

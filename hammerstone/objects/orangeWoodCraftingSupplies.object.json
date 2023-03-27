@@ -1,0 +1,18 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Sapiens-OSS/hammerstone-framework/feature/data-driven-api/schemas/object.schema.json",
+	"hammerstone:object_definition": {
+		"description": {
+			"identifier": "orangeWoodCraftingSupplies",
+			"name": "Orange Wood Crafting Supplies",
+			"plural": "Orange Wood Crafting Supplies"
+		},
+		"components": {
+			"hs_object": {
+				"model": "orangeWoodCraftingSupplies"
+			},
+			"hs_resource": {
+				"link_to_resource": "woodCraftingSupplies"
+			}
+		}
+	}
+}
