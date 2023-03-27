@@ -1,7 +1,7 @@
 # Sapiens Basic Buildables
 
 This mod introduces basic building elements into the Sapiens videogame.
- - [Join the Discord]https://discord.gg/WnN8hj2Fyg)
+ - [Join the Discord](https://discord.gg/WnN8hj2Fyg)
  - [Hammerstone Framework](https://github.com/Sapiens-OSS/hammerstone-framework)
  
  ## Example
