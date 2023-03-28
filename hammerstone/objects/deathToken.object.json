@@ -1,0 +1,21 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Sapiens-OSS/hammerstone-framework/feature/data-driven-api/schemas/object.schema.json",
+	"hammerstone:object_definition": {
+		"description": {
+			"identifier": "deathToken",
+			"name": "Death Token",
+			"plural": "Death Tokens"
+		},
+		"components": {
+			"hs_object": {
+				"model": "deathToken"
+			},
+			"hs_resource": {
+				"create_resource": true
+			},
+			"hs_storage_link": {
+				"identifier": "crafting_supplies_storage"
+			}
+		}
+	}
+}

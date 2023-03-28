@@ -29,6 +29,14 @@ local chairBackRemaps = {
     orangeWoodCraftingSupplies = "orange_chairBack"
 }
 
+local tableTopRemaps = {
+    woodCraftingSupplies = "tableTop"
+}
+
+local tableLegRemaps = {
+    woodCraftingSupplies = "tableLeg"
+}
+
 -- Takes in a remap table, and returns the 'placeholderModelIndexForObjectTypeFunction' that can handle this data.
 --- @param remaps table string->string mapping
 local function createIndexFunction(remaps)
@@ -57,6 +65,25 @@ function mod:onload(modelPlaceholder)
     mod.modelPlaceholder = modelPlaceholder
     modelPlaceholder.initRemaps = function()
         super_initRemaps()
+
+        modelPlaceholder:addModel("table", {
+            { 
+                key = "woodCraftingSupplies_1",
+                resourceTypeIndex = resource.types.woodCraftingSupplies.index,
+                defaultModelName = "woodCraftingSupplies",
+                placeholderModelIndexForObjectTypeFunction = createIndexFunction(tableTopRemaps)
+            },
+            { 
+                key = "woodCraftingSupplies_2",
+                resourceTypeIndex = resource.types.woodCraftingSupplies.index,
+                defaultModelName = "woodCraftingSupplies",
+                placeholderModelIndexForObjectTypeFunction = createIndexFunction(tableLegRemaps)
+            },
+            {
+                key = "woodCraftingSupplies_store",
+                offsetToStorageBoxWalkableHeight = true,
+            },
+        })
 
         modelPlaceholder:addModel("woodChair", {
             { 

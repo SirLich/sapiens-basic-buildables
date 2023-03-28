@@ -2,18 +2,16 @@
 	"$schema": "https://raw.githubusercontent.com/Sapiens-OSS/hammerstone-framework/feature/data-driven-api/schemas/object.schema.json",
 	"hammerstone:object_definition": {
 		"description": {
-			"identifier": "woodChair",
-			"name": "Chair",
-			"plural": "Chairs",
-			"summary": "A comfortable place to sit"
+			"identifier": "table",
+			"name": "Table",
+			"plural": "Tables",
+			"summary": "A decorative eating spot"
 		},
 		"components": {
 			"hs_object": {
-				"model": "woodChair",
-				"scale": 1.0
+				"model": "table"
 			},
 			"hs_buildable": {
-				"seat_type": "chair",
 				"sequence": "researchBuildSequence",
 				"skills": [
 					"basicBuilding"
@@ -21,7 +19,7 @@
 				"resources": [
 					{
 						"resource": "woodCraftingSupplies",
-						"count": 6
+						"count": 2
 					}
 				]
 			}

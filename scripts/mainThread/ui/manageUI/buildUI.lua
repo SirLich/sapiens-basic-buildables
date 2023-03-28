@@ -15,6 +15,7 @@ function mod:onload(buildUI)
         super_createItemList()
 
         table.insert(buildUI.itemList, constructable.types.woodChair.index)
+        table.insert(buildUI.itemList, constructable.types.table.index)
     end
 end
 
