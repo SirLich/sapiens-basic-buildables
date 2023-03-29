@@ -1,0 +1,16 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Sapiens-OSS/hammerstone-framework/feature/data-driven-api/schemas/object.schema.json",
+	"hammerstone:object_definition": {
+		"description": {
+			"identifier": "aspen_woodStock"
+		},
+		"components": {
+			"hs_object": {
+				"model": "aspen_woodStock"
+			},
+			"hs_resource": {
+				"link_to_resource": "woodCraftingSupplies"
+			}
+		}
+	}
+}

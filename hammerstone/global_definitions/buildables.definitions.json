@@ -16,6 +16,20 @@
                 ]
             },
             {
+                "model": "aspen_woodSeat",
+                "base_model": "woodSeat",
+                "material_remaps": [
+                    {
+                        "from": "wood",
+                        "to": "whiteTrunk"
+                    },
+                    {
+                        "from": "bark",
+                        "to": "wood"
+                    }
+                ]
+            },
+            {
                 "model": "orange_chairLeg",
                 "base_model": "chairLeg",
                 "material_remaps": [

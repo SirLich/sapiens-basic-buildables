@@ -14,18 +14,21 @@ local mod = {
 local seatRemaps = {
     woodCraftingSupplies = "woodSeat",
     pine_woodStock = "woodSeat",
+    aspen_woodStock = "aspen_woodSeat",
     orangeWoodCraftingSupplies = "orange_woodSeat"
 }
 
 local chairLegRemaps = {
     woodCraftingSupplies = "chairLeg",
     pine_woodStock = "chairLeg",
+    aspen_woodStock = "chairLeg",
     orangeWoodCraftingSupplies = "orange_chairLeg"
 }
 
 local chairBackRemaps = {
     woodCraftingSupplies = "chairBack",
     pine_woodStock = "pine_chairBack",
+    aspen_woodStock = "aspen_chairBack",
     orangeWoodCraftingSupplies = "orange_chairBack"
 }
 
