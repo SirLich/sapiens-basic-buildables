@@ -80,6 +80,30 @@
                         "to": "trunk"
                     }
                 ]
+            },
+            {
+                "model": "pine_woodStock",
+                "base_model": "woodCraftingSupplies",
+                "material_remaps": [
+                    {
+                        "from": "whiteTrunk",
+                        "to": "trunk"
+                    }
+                ]
+            },
+            {
+                "model": "bamboo_woodStock",
+                "base_model": "woodCraftingSupplies",
+                "material_remaps": [
+                    {
+                        "from": "whiteTrunk",
+                        "to": "bamboo"
+                    },
+                    {
+                        "from": "wood",
+                        "to": "bambooDark"
+                    }
+                ]
             }
         ]
     }

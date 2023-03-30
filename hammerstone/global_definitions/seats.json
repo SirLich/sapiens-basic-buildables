@@ -1,0 +1,16 @@
+{
+    "hammerstone:global_definitions": {
+		"hs_seat_types": [
+			{
+				"identifier": "chair",
+				"comfort": 1,
+				"nodes": [
+					{
+						"key": "seatNode_1",
+						"type": "yUpAnyDirection"
+					}
+				]
+			}
+		]
+	}
+}

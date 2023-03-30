@@ -15,6 +15,7 @@ local seatRemaps = {
     woodCraftingSupplies = "woodSeat",
     pine_woodStock = "woodSeat",
     aspen_woodStock = "aspen_woodSeat",
+    bamboo_woodStock = "bamboo_chairSeat",
     orangeWoodCraftingSupplies = "orange_woodSeat"
 }
 
@@ -22,6 +23,7 @@ local chairLegRemaps = {
     woodCraftingSupplies = "chairLeg",
     pine_woodStock = "chairLeg",
     aspen_woodStock = "chairLeg",
+    bamboo_woodStock = "bamboo_chairLeg",
     orangeWoodCraftingSupplies = "orange_chairLeg"
 }
 
@@ -29,6 +31,7 @@ local chairBackRemaps = {
     woodCraftingSupplies = "chairBack",
     pine_woodStock = "pine_chairBack",
     aspen_woodStock = "aspen_chairBack",
+    bamboo_woodStock = "bamboo_chairBack",
     orangeWoodCraftingSupplies = "orange_chairBack"
 }
 
