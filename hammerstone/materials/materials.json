@@ -12,6 +12,14 @@
 				],
 				"metal": 0,
 				"roughness": 1
+			},
+			{
+				"identifier": "bronze",
+				"color": [
+					1, 0.4980392156862745, 0
+				],
+				"metal": 1,
+				"roughness": 0.8
 			}
 		]
 	}
