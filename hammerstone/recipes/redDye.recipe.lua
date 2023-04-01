@@ -6,40 +6,36 @@ local moduleManager = mjrequire "hammerstone/state/moduleManager"
 -- Math
 local mjm = mjrequire "common/mjm"
 local vec3 = mjm.vec3
-local vec3xMat3 = mjm.vec3xMat3
+local mat3Identity = mjm.mat3Identity
 
 function gen:getConfigs()
-	local craftable = moduleManager:get("craftable")
 	local gameObject = moduleManager:get("gameObject")
-
 	return {
 		{
+			debug = true,
 			description = {
-				identifier = "cookedChicken_recipe",
-				name = "Tallow"
+				identifier = "redDye_recipe",
+				name = "Craft Red Dye"
 			},
 			components = {
 				hs_recipe = {
-					preview_object = "tallow",
+					preview_object = "redDye",
 					classification = "craft",
 					props = {
-						isFoodPreperation = true,
-						disabledUntilCraftableResearched = false,
-						temporaryToolObjectType = gameObject.typeIndexMap.stick,
-						temporaryToolOffset = vec3xMat3(vec3(-0.35,0.0,0.0), craftable.cookingStickRotationOffset),
-						temporaryToolRotation = craftable.cookingStickRotation,
+						dontPickUpRequiredTool = true,
+						temporaryToolObjectType = gameObject.typeIndexMap.rockSmall,
+						temporaryToolOffset = vec3(0.0,0.01,0.0),
+						temporaryToolRotation = mat3Identity,
+						placeBuildObjectsInFinalLocationsOnDropOff = true,
 					}
 				},
 				hs_requirements = {
-					craft_area_groups = {
-						"campfire"
-					},
 					skills = {
-						"campfireCooking"
+						"grinding"
 					},
 					resources = {
 						{
-							resource = "bronzePot",
+							resource = "firedBowl",
 							action = {
 								action_type = "inspect",
 								duration = 0.4,
@@ -47,24 +43,26 @@ function gen:getConfigs()
 							}
 						},
 						{
-							resource = "chickenMeat",
+							resource_group = "dyeIngredients",
 							action = {
 								action_type = "inspect",
 								duration = 0.4,
 								duration_without_skill = 15
 							}
 						}
+					},
+					tools = {
+						"grinding"
 					}
 				},
 				hs_output = {
 					simple_output = {
-						"bronzePot",
-						"tallow",
-						"bone"
+						"redDye"
 					}
 				},
 				hs_build_sequence = {
-					action_sequence = "inspect"
+					build_model = "craftMedicine",
+					build_sequence = "grindingSequence"
 				}
 			}
 		}

@@ -1,0 +1,19 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Sapiens-OSS/hammerstone-framework/feature/data-driven-api/schemas/object.schema.json",
+	"hammerstone:object_definition": {
+		"description": {
+			"identifier": "redDye"
+		},
+		"components": {
+			"hs_object": {
+				"model": "redDyeBowl"
+			},
+			"hs_resource": {
+				"create_resource": true
+			},
+			"hs_storage_link": {
+				"identifier": "shared_storage"
+			}
+		}
+	}
+}

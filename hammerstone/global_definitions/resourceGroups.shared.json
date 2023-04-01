@@ -1,0 +1,13 @@
+{
+    "hammerstone:global_definitions": {
+		"hs_resource_groups": [
+			{
+				"identifier": "dyeIngredients",
+				"display_object": "redDye",
+				"resources": [
+					"poppyFlower"
+				]
+			}
+		]
+	}
+}
