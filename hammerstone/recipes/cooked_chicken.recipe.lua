@@ -9,8 +9,6 @@ local vec3 = mjm.vec3
 local vec3xMat3 = mjm.vec3xMat3
 
 function gen:getConfigs()
-	mj:log("GEN CONFIGS CALLED")
-
 	local craftable = moduleManager:get("craftable")
 	local gameObject = moduleManager:get("gameObject")
 
@@ -27,7 +25,7 @@ function gen:getConfigs()
 					classification = "craft",
 					props = {
 						isFoodPreperation = true,
-						disabledUntilCraftableResearched = true,
+						disabledUntilCraftableResearched = false,
 						temporaryToolObjectType = gameObject.typeIndexMap.stick,
 						temporaryToolOffset = vec3xMat3(vec3(-0.35,0.0,0.0), craftable.cookingStickRotationOffset),
 						temporaryToolRotation = craftable.cookingStickRotation,
@@ -70,13 +68,25 @@ function gen:getConfigs()
 						{
 							input = "chickenMeat",
 							output = {
+								"chickenMeatCooked",
+								"chickenMeatCooked",
+								"chickenMeatCooked",
+								"chickenMeatCooked",
+								"chickenMeatCooked",
+								"chickenMeatCooked",
 								"chickenMeatCooked"
+							}
+						},
+						{
+							input = "chickenMeatBreast",
+							output = {
+								"chickenMeatBreastCooked"
 							}
 						}
 					}
 				},
 				hs_build_sequence = {
-					action_sequence = "fireStickCook"
+					action_sequence = "inspect"
 				}
 			}
 		}
