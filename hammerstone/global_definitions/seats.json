@@ -10,6 +10,16 @@
 						"type": "yUpAnyDirection"
 					}
 				]
+			},
+			{
+				"identifier": "carpet",
+				"comfort": 0.5,
+				"nodes": [
+					{
+						"key": "seatNode_1",
+						"type": "yUpFlat"
+					}
+				]
 			}
 		]
 	}

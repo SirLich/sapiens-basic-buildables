@@ -1,0 +1,26 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Sapiens-OSS/hammerstone-framework/feature/data-driven-api/schemas/object.schema.json",
+	"hammerstone:object_definition": {
+		"description": {
+			"identifier": "carpet"
+		},
+		"components": {
+			"hs_object": {
+				"model": "carpet"
+			},
+			"hs_buildable": {
+				"seat_type": "carpet",
+				"sequence": "researchBuildSequence",
+				"skills": [
+					"basicBuilding"
+				],
+				"resources": [
+					{
+						"resource": "cloth",
+						"count": 4
+					}
+				]
+			}
+		}
+	}
+}

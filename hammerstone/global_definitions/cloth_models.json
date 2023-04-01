@@ -1,0 +1,36 @@
+{
+    "hammerstone:global_definitions": {
+        "hs_model_remaps": [
+            {
+                "model": "red_cloth",
+                "base_model": "cloth",
+                "material_remaps": [
+                    {
+                        "from": "cloth",
+                        "to": "redDye"
+                    }
+                ]
+            },
+            {
+                "model": "blue_cloth",
+                "base_model": "cloth",
+                "material_remaps": [
+                    {
+                        "from": "cloth",
+                        "to": "blueDye"
+                    }
+                ]
+            },
+            {
+                "model": "blue_dye",
+                "base_model": "firedBowlFilled",
+                "material_remaps": [
+                    {
+                        "from": "grain",
+                        "to": "blueDye"
+                    }
+                ]
+            }
+        ]
+    }
+}

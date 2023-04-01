@@ -5,7 +5,9 @@
 				"identifier": "dyeIngredients",
 				"display_object": "redDye",
 				"resources": [
-					"poppyFlower"
+					"poppyFlower",
+					"beetroot",
+					"beetrootCooked"
 				]
 			}
 		]

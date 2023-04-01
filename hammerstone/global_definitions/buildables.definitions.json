@@ -2,6 +2,20 @@
     "hammerstone:global_definitions": {
         "hs_model_remaps": [
             {
+                "model": "redWoolskin",
+                "base_model": "alpacaWoolskin",
+                "material_remaps": [
+                    {
+                        "from": "alpacaWool",
+                        "to": "redDye"
+                    },
+                    {
+                        "from": "alpacaWoolNoDecal",
+                        "to": "redDye"
+                    }
+                ]
+            },
+            {
                 "model": "redDyeBowl",
                 "base_model": "firedBowlFilled",
                 "material_remaps": [

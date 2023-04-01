@@ -43,6 +43,10 @@ local tableLegRemaps = {
     woodCraftingSupplies = "tableLeg"
 }
 
+local carpetRemaps = {
+    cloth = "carpetSection"
+}
+
 -- Takes in a remap table, and returns the 'placeholderModelIndexForObjectTypeFunction' that can handle this data.
 --- @param remaps table string->string mapping
 local function createIndexFunction(remaps)
@@ -87,6 +91,37 @@ function mod:onload(modelPlaceholder)
             },
             {
                 key = "woodCraftingSupplies_store",
+                offsetToStorageBoxWalkableHeight = true,
+            },
+        })
+
+        modelPlaceholder:addModel("carpet", {
+            { 
+                key = "cloth_1",
+                resourceTypeIndex = resource.types.cloth.index,
+                defaultModelName = "carpetSection",
+                placeholderModelIndexForObjectTypeFunction = createIndexFunction(carpetRemaps)
+            },
+            { 
+                key = "cloth_2",
+                resourceTypeIndex = resource.types.cloth.index,
+                defaultModelName = "carpetSection",
+                placeholderModelIndexForObjectTypeFunction = createIndexFunction(carpetRemaps)
+            },
+            { 
+                key = "cloth_3",
+                resourceTypeIndex = resource.types.cloth.index,
+                defaultModelName = "carpetSection",
+                placeholderModelIndexForObjectTypeFunction = createIndexFunction(carpetRemaps)
+            },
+            { 
+                key = "cloth_4",
+                resourceTypeIndex = resource.types.cloth.index,
+                defaultModelName = "carpetSection",
+                placeholderModelIndexForObjectTypeFunction = createIndexFunction(carpetRemaps)
+            },
+            {
+                key = "cloth_store",
                 offsetToStorageBoxWalkableHeight = true,
             },
         })
