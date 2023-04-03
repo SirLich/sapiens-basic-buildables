@@ -44,7 +44,9 @@ local tableLegRemaps = {
 }
 
 local carpetRemaps = {
-    cloth = "carpetSection"
+    cloth = "brown_carpet_section",
+    blue_cloth = "blue_carpet_section",
+    red_cloth = "red_carpet_section"
 }
 
 -- Takes in a remap table, and returns the 'placeholderModelIndexForObjectTypeFunction' that can handle this data.

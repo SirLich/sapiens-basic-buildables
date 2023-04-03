@@ -4,7 +4,7 @@
 			{
 				"identifier": "cloth",
 				"color": [
-					0.32, 0.09, 0.03
+					0.1, 0.09, 0.08
 				],
 				"metal": 0,
 				"roughness": 1.0
@@ -24,22 +24,6 @@
 				],
 				"metal": 0,
 				"roughness": 1
-			},
-			{
-				"identifier": "redDye",
-				"color": [
-					0.55, 0.03, 0.035
-				],
-				"metal": 0,
-				"roughness": 0.8
-			},
-			{
-				"identifier": "blueDye",
-				"color": [
-					0.035, 0.03, 0.55
-				],
-				"metal": 0,
-				"roughness": 0.8
 			},
 			{
 				"identifier": "bark",

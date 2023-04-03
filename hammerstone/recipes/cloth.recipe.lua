@@ -1,6 +1,6 @@
 local gen = {}
 
-function gen:getConfigs()
+function gen:getRecipeConfigs()
 	return {
 		{
 			debug = true,

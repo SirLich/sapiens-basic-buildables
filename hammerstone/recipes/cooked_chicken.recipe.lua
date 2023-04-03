@@ -8,7 +8,7 @@ local mjm = mjrequire "common/mjm"
 local vec3 = mjm.vec3
 local vec3xMat3 = mjm.vec3xMat3
 
-function gen:getConfigs()
+function gen:getRecipeConfigs()
 	local craftable = moduleManager:get("craftable")
 	local gameObject = moduleManager:get("gameObject")
 

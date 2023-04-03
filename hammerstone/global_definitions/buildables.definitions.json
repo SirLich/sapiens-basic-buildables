@@ -7,21 +7,11 @@
                 "material_remaps": [
                     {
                         "from": "alpacaWool",
-                        "to": "redDye"
+                        "to": "red_dye"
                     },
                     {
                         "from": "alpacaWoolNoDecal",
-                        "to": "redDye"
-                    }
-                ]
-            },
-            {
-                "model": "redDyeBowl",
-                "base_model": "firedBowlFilled",
-                "material_remaps": [
-                    {
-                        "from": "grain",
-                        "to": "redDye"
+                        "to": "red_dye"
                     }
                 ]
             },

@@ -20,16 +20,6 @@
                         "to": "blueDye"
                     }
                 ]
-            },
-            {
-                "model": "blue_dye",
-                "base_model": "firedBowlFilled",
-                "material_remaps": [
-                    {
-                        "from": "grain",
-                        "to": "blueDye"
-                    }
-                ]
             }
         ]
     }

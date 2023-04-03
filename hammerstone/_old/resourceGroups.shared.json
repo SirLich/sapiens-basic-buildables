@@ -6,8 +6,7 @@
 				"display_object": "redDye",
 				"resources": [
 					"poppyFlower",
-					"beetroot",
-					"beetrootCooked"
+					"beetroot"
 				]
 			}
 		]

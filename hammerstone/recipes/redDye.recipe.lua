@@ -8,18 +8,220 @@ local mjm = mjrequire "common/mjm"
 local vec3 = mjm.vec3
 local mat3Identity = mjm.mat3Identity
 
-function gen:getConfigs()
+---------------------------------------------------------------------------------
+-- Data
+---------------------------------------------------------------------------------
+
+local dyeIngredients = {
+	red_dye = {
+		"poppyFlower",
+		"beetroot"
+	},
+	blue_dye ={
+		"flax"
+	}
+}
+
+-- Extend dye colors with additional colors
+local colors = {
+	"blue",
+	"red"
+}
+
+
+---------------------------------------------------------------------------------
+-- Helper Functions
+---------------------------------------------------------------------------------
+
+local function generateCloth(color)
+	local identifier = color .. "_cloth"
+	return {
+		description = {
+			identifier = identifier
+		},
+		components = {
+			hs_object = {
+				model = identifier
+			},
+			hs_resource = {
+				link_to_resource = "cloth"
+			}
+		}
+	}
+end
+
+local function generateDye(color)
+	local identifier = color .. "_dye"
+	return {
+		description = {
+			identifier = identifier
+		},
+		components = {
+			hs_object = {
+				model = identifier
+			},
+			hs_resource = {
+				link_to_resource = "dye"
+			}
+		}
+	}
+end
+
+
+local function flattenIngrediants()
+	local out = {}
+	for key, value in pairs(dyeIngredients) do
+		for i, ingrediant in ipairs(value) do
+			table.insert(out, ingrediant)
+		end
+	end
+	return out
+end
+
+local function generateOutputByObject()
+	local out = {}
+
+	for key, value in pairs(dyeIngredients) do
+		for i, ingrediant in ipairs(value) do
+			table.insert(out, {
+				input = ingrediant,
+				output = {
+					key
+				}
+			})
+		end
+	end
+
+	return out
+end
+
+local function generateClothOutputByObject()
+	local out = {}
+
+	for i, color in ipairs(colors) do
+		table.insert(out, {
+			input = color .. "_dye",
+			output = {
+				color .. "_cloth"
+			}
+		})
+	end
+
+	return out
+end
+
+
+---------------------------------------------------------------------------------
+-- Generators
+---------------------------------------------------------------------------------
+
+function gen:getResourceGroups()
+	return {
+		{
+			identifier = "dye_ingredients",
+			display_object ="red_dye",
+			resources = flattenIngrediants()
+		}
+	}
+end
+
+function gen:getModelRemaps()
+	local out = {}
+
+	for i, color in ipairs(colors) do
+		local dye_identifier = color .. "_dye"
+		local cloth_identifier = color .. "_cloth"
+		local carpet_identifier = color .. "_carpet_section"
+
+
+		table.insert(out, {
+			model = dye_identifier,
+			base_model ="firedBowlFilled",
+			material_remaps = {
+				{
+					from = "grain",
+					to = dye_identifier
+				}
+			}
+		})
+
+		table.insert(out,{
+			model = cloth_identifier,
+			base_model =  "cloth",
+			material_remaps = {
+				{
+					from = "cloth",
+					to =  dye_identifier
+				}
+			}
+		})
+
+		table.insert(out,{
+			model = carpet_identifier,
+			base_model =  "brown_carpet_section",
+			material_remaps = {
+				{
+					from = "brown_dye",
+					to =  dye_identifier
+				}
+			}
+		})
+	end
+
+	return out
+end
+
+
+function gen:getMaterials()
+	return {
+		{
+			identifier =  "red_dye",
+			color = {
+				0.5607843137254902, 0.17254901960784313, 0.17254901960784313
+			},
+			roughness = 0.7
+		},
+		{
+			identifier =  "brown_dye",
+			color = {
+				0.3803921568627451,0.21568627450980393, 0.1411764705882353
+			},
+			roughness = 0.7
+		},
+		{
+			identifier = "blue_dye",
+			color = {
+				0.21568627450980393, 0.3411764705882353, 0.5490196078431373
+			},
+			roughness = 0.7
+		},
+	}
+end
+
+function gen:getObjectConfigs()
+	local configs = {}
+	for i, color in ipairs(colors) do
+		table.insert(configs, i, generateDye(color))
+	end
+
+	for i, color in ipairs(colors) do
+		table.insert(configs, i, generateCloth(color))
+	end
+	return configs
+end
+
+
+function gen:getRecipeConfigs()
 	local gameObject = moduleManager:get("gameObject")
 	return {
 		{
-			debug = true,
 			description = {
-				identifier = "redDye_recipe",
-				name = "Craft Red Dye"
+				identifier = "dye_recipe",
+				name = "Craft Dye"
 			},
 			components = {
 				hs_recipe = {
-					preview_object = "redDye",
+					preview_object = "red_dye",
 					classification = "craft",
 					props = {
 						dontPickUpRequiredTool = true,
@@ -43,7 +245,7 @@ function gen:getConfigs()
 							}
 						},
 						{
-							resource_group = "dyeIngredients",
+							resource_group = "dye_ingredients",
 							action = {
 								action_type = "inspect",
 								duration = 0.4,
@@ -56,9 +258,60 @@ function gen:getConfigs()
 					}
 				},
 				hs_output = {
-					simple_output = {
-						"redDye"
+					output_by_object = generateOutputByObject()
+				},
+				hs_build_sequence = {
+					build_model = "craftMedicine",
+					build_sequence = "grindingSequence"
+				}
+			}
+		},
+		{
+			description = {
+				identifier = "dye_cloth_recipe",
+				name = "Dye the Cloth",
+				summary = "Dye the cloth!"
+			},
+			components = {
+				hs_recipe = {
+					preview_object = "red_cloth",
+					classification = "craft",
+					props = {
+						dontPickUpRequiredTool = true,
+						temporaryToolObjectType = gameObject.typeIndexMap.rockSmall,
+						temporaryToolOffset = vec3(0.0,0.01,0.0),
+						temporaryToolRotation = mat3Identity,
+						placeBuildObjectsInFinalLocationsOnDropOff = true,
 					}
+				},
+				hs_requirements = {
+					skills = {
+						"grinding"
+					},
+					resources = {
+						{
+							resource = "dye",
+							action = {
+								action_type = "inspect",
+								duration = 0.4,
+								duration_without_skill = 15
+							}
+						},
+						{
+							resource = "cloth",
+							action = {
+								action_type = "inspect",
+								duration = 0.4,
+								duration_without_skill = 15
+							}
+						}
+					},
+					tools = {
+						"grinding"
+					}
+				},
+				hs_output = {
+					output_by_object = generateClothOutputByObject()
 				},
 				hs_build_sequence = {
 					build_model = "craftMedicine",

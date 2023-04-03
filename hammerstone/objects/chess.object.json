@@ -2,11 +2,11 @@
 	"$schema": "https://raw.githubusercontent.com/Sapiens-OSS/hammerstone-framework/feature/data-driven-api/schemas/object.schema.json",
 	"hammerstone:object_definition": {
 		"description": {
-			"identifier": "dye"
+			"identifier": "chess"
 		},
 		"components": {
 			"hs_object": {
-				"model": "red_dye"
+				"model": "chess"
 			},
 			"hs_resource": {
 				"create_resource": true
