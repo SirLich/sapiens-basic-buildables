@@ -41,9 +41,7 @@ local function generateCloth(color)
 		},
 		components = {
 			hs_object = {
-				model = identifier
-			},
-			hs_resource = {
+				model = identifier,
 				link_to_resource = "cloth"
 			}
 		}
@@ -58,9 +56,7 @@ local function generateDye(color)
 		},
 		components = {
 			hs_object = {
-				model = identifier
-			},
-			hs_resource = {
+				model = identifier,
 				link_to_resource = "dye"
 			}
 		}

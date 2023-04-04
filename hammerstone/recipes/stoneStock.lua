@@ -14,9 +14,7 @@ local function generateConfig(stoneType)
 		},
 		components = {
 			hs_object = {
-				model = identifier
-			},
-			hs_resource = {
+				model = identifier,
 				link_to_resource = "stoneStock"
 			}
 		}
@@ -73,10 +71,7 @@ function gen:getObjectConfigs()
 				model = "stoneStock"
 			},
 			hs_resource = {
-				create_resource = true
-			},
-			hs_storage_link = {
-				identifier = "shared_storage"
+				link_to_storage = "shared_storage"
 			}
 		}
 	})

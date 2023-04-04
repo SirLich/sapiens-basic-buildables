@@ -9,10 +9,7 @@
 				"model": "bronzeIngot"
 			},
 			"hs_resource": {
-				"create_resource": true
-			},
-			"hs_storage_link": {
-				"identifier": "bronzeIngot_storage"
+				"link_to_storage": "bronzeIngot_storage"
 			}
 		}
 	}

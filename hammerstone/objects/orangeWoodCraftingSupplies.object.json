@@ -8,9 +8,7 @@
 		},
 		"components": {
 			"hs_object": {
-				"model": "orangeWoodCraftingSupplies"
-			},
-			"hs_resource": {
+				"model": "orangeWoodCraftingSupplies",
 				"link_to_resource": "woodCraftingSupplies"
 			}
 		}

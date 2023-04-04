@@ -11,10 +11,7 @@
 				"model": "woodCraftingSupplies"
 			},
 			"hs_resource": {
-				"create_resource": true
-			},
-			"hs_storage_link": {
-				"identifier": "crafting_supplies_storage"
+				"link_to_storage": "crafting_supplies_storage"
 			}
 		}
 	}

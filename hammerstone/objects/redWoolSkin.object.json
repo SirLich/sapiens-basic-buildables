@@ -6,9 +6,7 @@
 		},
 		"components": {
 			"hs_object": {
-				"model": "redWoolskin"
-			},
-			"hs_resource": {
+				"model": "redWoolskin",
 				"link_to_resource": "woolskin"
 			}
 		}

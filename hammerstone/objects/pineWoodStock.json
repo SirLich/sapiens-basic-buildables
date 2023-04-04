@@ -8,9 +8,7 @@
 		},
 		"components": {
 			"hs_object": {
-				"model": "pine_woodStock"
-			},
-			"hs_resource": {
+				"model": "pine_woodStock",
 				"link_to_resource": "woodCraftingSupplies"
 			}
 		}

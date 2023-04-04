@@ -19,9 +19,7 @@ local function generateConfig(woodType)
 		},
 		components = {
 			hs_object = {
-				model = identifier
-			},
-			hs_resource = {
+				model = identifier,
 				link_to_resource = "woodCraftingSupplies"
 			}
 		}

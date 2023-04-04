@@ -9,10 +9,7 @@
 				"model": "red_dye"
 			},
 			"hs_resource": {
-				"create_resource": true
-			},
-			"hs_storage_link": {
-				"identifier": "shared_storage"
+				"link_to_storage": "shared_storage"
 			}
 		}
 	}
